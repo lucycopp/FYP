@@ -9,7 +9,7 @@ $connectionOptions = array(
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-$sql =  "SELECT ID FROM UserTable WHERE USER LIKE '%" . 'Lucy' . "%'";
+$sql =  "SELECT ID FROM UserTable WHERE USER LIKE 'Lucy'";
 $result = mysql_query($sql);
 echo $result;
 
