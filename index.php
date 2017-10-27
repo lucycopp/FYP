@@ -16,7 +16,7 @@ if ($conn === false)
 else {
     echo "Connected - Trying to add";
 }
-$sql = "INSERT INTO UserTable(Username', 'Guide?')
+$sql = "INSERT INTO UserTable('Username', 'Guide')
 VALUES ('Lucy', 1)";
 $conn -> query($sql);
 if ($conn->query($sql) === TRUE) {
