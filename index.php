@@ -17,11 +17,11 @@ else {
     echo "Success";
 }
 try{
-    addToUserTable("lucy", 1, $conn);
+    addToUserTable("HI", 1, $conn);
 }
 catch (Exception $e){ echo "Unable to add + " + $e; }
 function addToUserTable($username, $guide, $conn){
-    $sql = "INSERT INTO UserTable(Username, Guide?) VALUES ($username, $guide)";
+    $sql = "INSERT INTO UserTable('Username', 'Guide?') VALUES ('WILL', 1)";
     $conn -> query($sql);
 
 }
