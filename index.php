@@ -1,3 +1,4 @@
+<html>
 <?php
 /*Connect using SQL Server authentication.*/
 $serverName = "tcp:lcdata.database.windows.net,1433";
@@ -15,6 +16,12 @@ if ($conn === false)
 else {
     echo "Success";
 }
+try{
+    addToUserTable("lucy", 1, $conn);
+}
+catch (Exception $e){ echo "Unable to add + " + $e; }
+function addToUserTable($username, $guide, $conn){
+    $sql = "INSERT INTO UserTable(Username, Guide?) VALUES ($username, $guide)";
+    $conn -> query($sql);
 
-
-?>
+}
