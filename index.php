@@ -1,19 +1,17 @@
 <?php
-$servername = "lcdata.database.windows.net";
-$username = "lucycopp";
-$password = "Bubble2017";
-$database = "data";
-//create the connection
-$conn = mysqli_init();
-mysqli_real_connect($conn, $host, $username, $password, $db_name);
-if (mysqli_connect_errno($conn)) {
-    die('Failed to connect to MySQL: '.mysqli_connect_error());
-}
-else {
-    echo "Connected successfully!";
-}
-mysqli.close($conn);
+/*Connect using SQL Server authentication.*/
+$serverName = "tcp:lcdata.database.windows.net,1433";
+$connectionOptions = array(
+    "Database" => "data",
+    "UID" => "lucycopp",
+    "PWD" => "Bubble2017"
+);
+$conn = sqlsrv_connect($serverName, $connectionOptions);
 
+if ($conn === false)
+{
+    die(print_r(sqlsrv_errors() , true));
+}
 
 
 ?>
