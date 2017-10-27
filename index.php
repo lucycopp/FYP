@@ -30,7 +30,7 @@ function addToUserTable($username, $guide, $conn){
 }
 
 function searchForRecordInUserTableUsername ($username, $connection){
-    $sql = "SELECT * FROM UserTable WHERE Username LIKE $username";
+    $sql = "SELECT * FROM UserTable WHERE Username LIKE '%".$username."%'";
     $res = $connection->query($sql);
     while($row=$res->fetch_assoc()) { echo 'Found'; }
 
