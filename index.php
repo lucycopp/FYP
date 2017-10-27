@@ -9,12 +9,11 @@ $connectionOptions = array(
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-if(($result = sqlsrv_query($conn, "SELECT * FROM UserTable")) !== false){
-    while($obj = sqlsrv_fetch_object($result)){
-        echo $obj -> colName.'<br />';
-    }
+$result = sqlsrv_query($db->db_conn, "SELECT * FROM UserTable");
+if($result === false) {
+    die( print_r( sqlsrv_errors(), true) );
 }
-else{die(print_r(sqlsrv_erros(), true)); }
+else {echo "yes"; }
 
 function addToUserTable($username, $guide, $conn){
 
