@@ -9,7 +9,7 @@ $connectionOptions = array(
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-$result = sqlsrv_query($db->db_conn, "SELECT * FROM UserTable");
+$result = sqlsrv_query($conn, "SELECT * FROM UserTable");
 if($result === false) {
     die( print_r( sqlsrv_errors(), true) );
 }
