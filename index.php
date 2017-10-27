@@ -2,16 +2,17 @@
 $servername = "lcdata.database.windows.net";
 $username = "lucycopp";
 $password = "Bubble2017";
-
+$database = "data";
 //create the connection
-$conn = new mysqli($servername, $username, $password);
-
-if($conn -> connect_error){
-    die("Connection failed: ".$conn->connect_error);
+$conn = mysqli_init();
+mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306);
+if (mysqli_connect_errno($conn)) {
+    die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
-
-echo "Connected successfully!";
-
+else {
+    echo "Connected successfully!";
+}
+mysqli.close($conn);
 
 
 
