@@ -16,10 +16,14 @@ if ($conn === false)
 else {
     echo "Success";
 }
-try{
-    addToUserTable("HI", 1, $conn);
+$sql = "INSERT INTO UserTable (Username, Guide?)
+VALUES ('Lucy', '1')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
-catch (Exception $e){ echo "Unable to add + " + $e; }
 function addToUserTable($username, $guide, $conn){
     $sql = "INSERT INTO UserTable('Username', 'Guide?') VALUES ('WILL', 1)";
     $conn -> query($sql);
