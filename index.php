@@ -17,7 +17,7 @@ else {
     echo "Connected - Trying to add";
 }
 try {
-    mysqli_query($conn, "INSERT INTO UserTable(Username, Guide) VALUES ('WILL', 1)");
+    mysqli_query($conn, "INSERT INTO UserTable(Username, Guide) VALUES ('LUCY', 1)");
 }
 catch (Exception $e){echo $e;}
 
