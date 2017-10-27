@@ -11,9 +11,9 @@ $conn = sqlsrv_connect($serverName, $connectionOptions);
 $query = "SELECT * FROM 'UserTable' WHERE 'Username' = '$username'";
 $result = mysqli_query($query) or die (mysqli_query());
 if ($result) {
-    echo "true";
+    print_r( "true");
 }
-else { echo "false"; }
+else {print_r( "false"); }
 
 
 function addToUserTable($username, $guide, $conn){
