@@ -15,8 +15,9 @@ if ($conn === false)
 }
 else {
     echo "Connected";
+    searchForRecordInUserTableUsername('Lucy', $conn);
 }
-searchForRecordInUserTableUsername('Lucy', $conn);
+
 function addToUserTable($username, $guide, $conn){
 
     $sql =  "INSERT INTO UserTable(Username, Guide) VALUES (?, ?)";
