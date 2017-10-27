@@ -9,9 +9,12 @@ $connectionOptions = array(
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-$sql =  "SELECT ID FROM UserTable WHERE USER LIKE 'Lucy'";
-$result = mysql_query($sql);
-echo $result;
+if(($result = sqlsrv_query($conn, "SELECT * FROM UserTable")) !== false){
+    while($obj = sqlsrv_fetch_object($result)){
+        echo $obj -> colName.'<br />';
+    }
+}
+else{die(print_r(sqlsrv_erros(), true)); }
 
 function addToUserTable($username, $guide, $conn){
 
