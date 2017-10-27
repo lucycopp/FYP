@@ -8,12 +8,16 @@ $connectionOptions = array(
     "PWD" => "Bubble2017"
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-$query = "SELECT * FROM 'UserTable' WHERE 'Username' = '$username'";
-$result = mysqli_query($query) or die (mysqli_query());
-if ($result) {
-    print_r( "true");
+
+
+$query = "SELECT 'ID' FROM 'UserTable' WHERE 'Username' = '$username'";
+if ($stmt = $mysqli->prepare($query)){
+    $stmt->execute();
+    while ($stmt->fetch()){
+        echo "FETCH";
+    }
 }
-else {print_r( "false"); }
+else { echo "NO";}
 
 
 function addToUserTable($username, $guide, $conn){
