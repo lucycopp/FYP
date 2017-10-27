@@ -10,7 +10,7 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
 $sql =  "SELECT ID FROM UserTable WHERE USER LIKE '%" . 'Lucy' . "%'";
-$result = mysqli_query($sql);
+$result = mysql_query($sql);
 echo $result;
 
 function addToUserTable($username, $guide, $conn){
