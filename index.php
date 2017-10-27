@@ -8,8 +8,7 @@ $connectionOptions = array(
     "PWD" => "Bubble2017"
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-
-
+echo "HELLO";
 $query = "SELECT 'ID' FROM 'UserTable' WHERE 'Username' = '$username'";
 if ($stmt = $mysqli->prepare($query)){
     $stmt->execute();
