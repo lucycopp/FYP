@@ -8,15 +8,13 @@ $connectionOptions = array(
     "PWD" => "Bubble2017"
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
+$query = "SELECT * FROM 'UserTable' WHERE 'Username' = '$username'";
+$result = mysqli_query($query) or die (mysqli_query());
+if ($result) {
+    echo "true";
+}
+else { echo "false"; }
 
-if ($conn === false)
-{
-    die(print_r(sqlsrv_errors() , true));
-}
-else {
-    echo "Connected";
-    searchForRecordInUserTableUsername(Lucy, $conn);
-}
 
 function addToUserTable($username, $guide, $conn){
 
