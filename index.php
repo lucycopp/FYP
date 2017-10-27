@@ -17,7 +17,13 @@ else {
     echo "Connected - Trying to add";
 }
 try {
-    mysqli_query($conn, "INSERT INTO UserTable(Username, Guide) VALUES ('LUCY', 1)");
+    $sql =  "INSERT INTO UserTable(Username, Guide) VALUES (?, ?)";
+    $params = array("Lucy", 0);
+
+    $stmt = sqlsrv_query( $conn, $sql, $params);
+    if( $stmt === false ) {
+        die( print_r( sqlsrv_errors(), true));
+    }
 }
 catch (Exception $e){echo $e;}
 
