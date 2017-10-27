@@ -14,30 +14,23 @@ if ($conn === false)
     die(print_r(sqlsrv_errors() , true));
 }
 else {
-    echo "Connected - Trying to add";
+    echo "Connected";
 }
-try {
+searchForRecordInUserTableUsername('Lucy', $conn);
+function addToUserTable($username, $guide, $conn){
+
     $sql =  "INSERT INTO UserTable(Username, Guide) VALUES (?, ?)";
-    $params = array("Lucy", 0);
+    $params = array($username, $guide);
 
     $stmt = sqlsrv_query( $conn, $sql, $params);
     if( $stmt === false ) {
         die( print_r( sqlsrv_errors(), true));
     }
 }
-catch (Exception $e){echo $e;}
 
-
-
-
-
-
-
-
-
-
-function addToUserTable($username, $guide, $conn){
-    $sql = "INSERT INTO UserTable('Username', 'Guide?') VALUES ('WILL', 1)";
-    $conn -> query($sql);
+function searchForRecordInUserTableUsername ($username, $connection){
+    $sql = "SELECT * FROM UserTable WHERE Username LIKE $username";
+    $res = $connection->query($sql);
+    while($row=$res->fetch_assoc()) { echo 'Found'; }
 
 }
