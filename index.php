@@ -26,7 +26,7 @@ function addToUserTable($username, $guide, $conn){
 
 function searchForRecordInUserTableUsername ($username, $connection)
 {
-    $sql = "SELECT * FROM UserTable WHERE Username=$username";
+    $sql = "SELECT * FROM UserTable WHERE Username=$username FOR JSON AUTO";
     $stmt = sqlsrv_query($connection, $sql);
     if ($stmt) {
         while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC)) {
