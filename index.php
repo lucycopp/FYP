@@ -8,8 +8,14 @@ $connectionOptions = array(
     "PWD" => "Bubble2017"
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-addToUserTable('heather', 0, $conn);
-//searchForRecordInUserTableUsernameReturnJSON('Lucy', $conn);
+if ($conn) {
+   if($_GET["username"]){
+       echo "Hello ". $_GET['username']. "<br />";
+   };
+
+}
+
+
 
 
 
