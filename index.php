@@ -22,7 +22,7 @@ function addToUserTable($username, $guide, $conn){
 }
 
 function searchForRecordInUserTableUsername ($username, $connection){
-    $sql ="SELECT ID FROM UserTable WHERE Username='Lucy'";
+    $sql ="SELECT * FROM UserTable WHERE Username='WILL'";
    // $params = 'Lucy';
     $stmt = sqlsrv_query($connection, $sql);
     if($stmt) {
