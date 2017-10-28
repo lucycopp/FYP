@@ -6,5 +6,7 @@
  * Time: 23:38
  */
 require 'index.php';
-searchForRecordInUserTableUsernameReturnJSON('Lucy', $conn);
+$username = $_POST["name"];
+
+searchForRecordInUserTableUsernameReturnJSON($username, $conn);
 ?>
