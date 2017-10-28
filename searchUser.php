@@ -9,6 +9,6 @@ require 'index.php';
 echo $_GET['name'];
 
 
-searchForRecordInUserTableUsernameReturnJSON($username, $conn);
+searchForRecordInUserTableUsernameReturnJSON($_GET['name'], $conn);
 
 ?>
