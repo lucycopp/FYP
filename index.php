@@ -26,8 +26,7 @@ function searchForRecordInUserTableUsername ($username, $connection){
    // $params = 'Lucy';
     $stmt = sqlsrv_query($connection, $sql);
     if($stmt) {
-      echo $stmt;
-      echo "found";
+      echo sqlsrv_fetch_array($stmt);
     }
     else {die(print_r(sqlsrv_errors(), true)); }
 
