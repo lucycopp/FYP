@@ -28,10 +28,10 @@ function searchForRecordInUserTableUsername ($username, $connection){
     $sql ="SELECT ID FROM UserTable WHERE Username=$username";
     $stmt = sqlsrv_query($connection, $sql);
     if($stmt) {
-        while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
+        while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
             echo $row[0];
             echo "JSON";
-            
+            echo json_encode($stmt);
         }
         sqlsrv_free_stmt( $stmt);
     }
