@@ -8,5 +8,7 @@
 require 'index.php';
 $username = $_POST["name"];
 
+
 searchForRecordInUserTableUsernameReturnJSON($username, $conn);
+
 ?>
