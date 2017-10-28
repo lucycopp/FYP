@@ -25,11 +25,11 @@ function addToUserTable($username, $guide, $conn){
 }
 
 function searchForRecordInUserTableUsername ($username, $connection){
-    $sql ="SELECT ID FROM UserTable WHERE Username=$username";
+    $sql ="SELECT * FROM UserTable WHERE Username=$username";
     $stmt = sqlsrv_query($connection, $sql);
     if($stmt) {
         while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-            echo $row[0];
+            echo $row[0] + " " + row[1] + " " + row[2];
             echo "JSON: ";
             echo json_encode(row[4]);
         }
