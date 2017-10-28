@@ -24,7 +24,7 @@ function addToUserTable($username, $guide, $conn){
 function searchForRecordInUserTableUsername ($username, $connection){
     $sql ="SELECT ID FROM UserTable WHERE Username=$username";
     $params = 'Lucy';
-    $stmt = sqlsrv_query($connection, $sql, $params);
+    $stmt = sqlsrv_query($connection, $sql);
     if($stmt) {
         while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
             echo $row[0];
@@ -32,6 +32,5 @@ function searchForRecordInUserTableUsername ($username, $connection){
         sqlsrv_free_stmt( $stmt);
     }
     else {die(print_r(sqlsrv_errors(), true)); }
-
 }
 ?>
