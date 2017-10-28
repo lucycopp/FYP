@@ -8,7 +8,10 @@ $connectionOptions = array(
     "PWD" => "Bubble2017"
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-searchForRecordInUserTableUsername("'WILL'", $conn);
+
+
+
+
 
 function addToUserTable($username, $guide, $conn){
 
@@ -25,8 +28,10 @@ function searchForRecordInUserTableUsername ($username, $connection){
     $sql ="SELECT ID FROM UserTable WHERE Username=$username";
     $stmt = sqlsrv_query($connection, $sql);
     if($stmt) {
-        while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
+        while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
             echo $row[0];
+            echo "JSON";
+            
         }
         sqlsrv_free_stmt( $stmt);
     }
