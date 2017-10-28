@@ -31,7 +31,7 @@ function searchForRecordInUserTableUsername ($username, $connection){
         while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
             echo $row[0];
             echo "JSON";
-            echo json_encode($stmt);
+            echo json_encode(row[4]);
         }
         sqlsrv_free_stmt( $stmt);
     }
