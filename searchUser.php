@@ -12,7 +12,7 @@ $username = Heather;
 
 $sql = "SELECT * FROM UserTable WHERE Username=(?) FOR JSON AUTO";
 $parameters =  array($username);
-$stmt = sqlsrv_query($connection, $sql, $parameters);
+$stmt = sqlsrv_query($conn, $sql, $parameters);
 if ($stmt) {
     while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC)) {
         echo $row[0];
