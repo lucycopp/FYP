@@ -27,7 +27,7 @@ function searchForRecordInUserTableUsername ($username, $connection){
     $stmt = sqlsrv_query($connection, $sql);
     if($stmt) {
         while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {
-            echo $row[0].", ".$row[1]."<br />";
+            echo $row[0];
         }
         sqlsrv_free_stmt( $stmt);
     }
