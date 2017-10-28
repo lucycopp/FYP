@@ -24,7 +24,7 @@ function addToUserTable($username, $guide, $conn){
 function searchForRecordInUserTableUsername ($username, $connection){
     $stmt = sqlsrv_query($connection, "SELECT ID FROM UserTable WHERE Username='WILL'");
     if($stmt) {
-       echo "found";
+       echo $stmt;
     }
     else {die(print_r(sqlsrv_errors(), true)); }
 
