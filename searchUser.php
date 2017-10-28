@@ -6,7 +6,9 @@
  * Time: 23:38
  */
 require 'index.php';
-$username = $_GET['name'];
+//$username = $_GET['name'];
+$username = 'Heather';
+
 
 $sql = "SELECT * FROM UserTable WHERE Username=(?) FOR JSON AUTO";
 $parameters =  array($username);
