@@ -8,8 +8,8 @@ $connectionOptions = array(
     "PWD" => "Bubble2017"
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-//addToUserTable('hjsskjdhs', 0);
-searchForRecordInUserTableUsernameReturnJSON('Lucy', $conn);
+addToUserTable('heather', 0);
+//searchForRecordInUserTableUsernameReturnJSON('Lucy', $conn);
 
 
 
@@ -22,7 +22,7 @@ function addToUserTable($username, $guide, $conn){
     $stmt = sqlsrv_query( $conn, $sql, $params);
     if( $stmt === false ) {
         die( print_r( sqlsrv_errors(), true));
-    }
+    }else {echo "Added"; }
 }
 
 function searchForRecordInUserTableUsernameReturnJSON ($username, $connection)
