@@ -24,11 +24,9 @@ function addToUserTable($username, $guide, $conn){
 function searchForRecordInUserTableUsername ($username, $connection){
     $sql ="SELECT ID FROM UserTable WHERE Username='Lucy'";
    // $params = 'Lucy';
-    $stmt = sqlsrv_query($connection, $sql);
+    $stmt = mssql_query($connection, $sql);
     if($stmt) {
-       sqlsrv_next_result($stmt);
-       sqlsrv_fetch($stmt);
-       echo sqlsrv_get_field($stmt, 0);
+      echo $stmt;
     }
     else {die(print_r(sqlsrv_errors(), true)); }
 
