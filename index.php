@@ -27,6 +27,7 @@ function searchForRecordInUserTableUsername ($username, $connection){
     $stmt = mssql_query($connection, $sql);
     if($stmt) {
       echo $stmt;
+      echo "found";
     }
     else {die(print_r(sqlsrv_errors(), true)); }
 
