@@ -7,7 +7,7 @@
  */
 require 'index.php';
 //$username = $_GET['name'];
-$username = 'Heather';
+$username = Heather;
 
 
 $sql = "SELECT * FROM UserTable WHERE Username=(?) FOR JSON AUTO";
