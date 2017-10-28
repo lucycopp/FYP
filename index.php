@@ -8,7 +8,7 @@ $connectionOptions = array(
     "PWD" => "Bubble2017"
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-searchForRecordInUserTableUsername($username = 'Lucy', $conn);
+searchForRecordInUserTableUsername("'Lucy'", $conn);
 
 function addToUserTable($username, $guide, $conn){
 
