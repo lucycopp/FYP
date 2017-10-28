@@ -8,7 +8,7 @@ $connectionOptions = array(
     "PWD" => "Bubble2017"
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-searchForRecordInUserTableUsername("lucy", $conn);
+searchForRecordInUserTableUsername("Lucy", $conn);
 
 function addToUserTable($username, $guide, $conn){
 
@@ -22,7 +22,7 @@ function addToUserTable($username, $guide, $conn){
 }
 
 function searchForRecordInUserTableUsername ($username, $connection){
-    $result = sqlsrv_query($connection, "SELECT ID FROM UserTable WHERE Username='Lucy'");
+    $result = sqlsrv_query($connection, "SELECT ID FROM UserTable WHERE Username=$username");
     if($result === false) {
         die( print_r( sqlsrv_errors(), true) );
     }
