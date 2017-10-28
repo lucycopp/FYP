@@ -8,12 +8,7 @@ $connectionOptions = array(
     "PWD" => "Bubble2017"
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-
-$result = sqlsrv_query($conn, "SELECT * FROM UserTable");
-if($result === false) {
-    die( print_r( sqlsrv_errors(), true) );
-}
-else {echo "yes"; }
+searchForRecordInUserTableUsername("lucy", $conn);
 
 function addToUserTable($username, $guide, $conn){
 
@@ -27,11 +22,11 @@ function addToUserTable($username, $guide, $conn){
 }
 
 function searchForRecordInUserTableUsername ($username, $connection){
-    $query = "SELECT * FROM 'UserTable' WHERE 'Username' = '$username'";
-    $result = mysqli_query($query) or die (mysqli_query());
-    if ($result) {
-        echo "true";
+    $result = sqlsrv_query($connection, "SELECT * FROM UserTable");
+    if($result === false) {
+        die( print_r( sqlsrv_errors(), true) );
     }
-    else { echo "false"; }
+    else {echo "yes"; }
+
 }
 ?>
