@@ -8,7 +8,7 @@ $connectionOptions = array(
     "PWD" => "Bubble2017"
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-searchForRecordInUserTableUsernameReturnJSON(Will, $conn);
+searchForRecordInUserTableUsernameReturnJSON('Lucy', $conn);
 
 
 
