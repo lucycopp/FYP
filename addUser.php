@@ -6,8 +6,9 @@ require "index.php";
  * Date: 28/10/2017
  * Time: 23:33
  */
+$username = $_GET['name'];
+$guide = $_GET['guide'];
 
-
-addToUserTable('margerat', 0, $conn);
+addToUserTable($username,$guide, $conn);
 
 ?>
