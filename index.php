@@ -10,14 +10,14 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 if ($conn) {
    if($_GET["Email"]){
-       echo "Hello ". $_GET['Email']. "<br />";
+       echo "Hello ". $_GET['email']. "<br />";
    };
 
 }
 
 function addToUserTable($Email, $guide, $conn){
 
-    $sql =  "INSERT INTO UserTable(Email, Guide?) VALUES (?, ?)";
+    $sql =  "INSERT INTO UserTable(Email, Guide) VALUES (?, ?)";
     $params = array($Email, $guide);
 
     $stmt = sqlsrv_query( $conn, $sql, $params);
