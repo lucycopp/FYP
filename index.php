@@ -17,7 +17,7 @@ if ($conn) {
 
 function addToUserTable($Email, $guide, $conn){
 
-    $sql =  "INSERT INTO UserTable(Email, Guide) VALUES (?, ?)";
+    $sql =  "INSERT INTO UserTable(Email, Guide?) VALUES (?, ?)";
     $params = array($Email, $guide);
 
     $stmt = sqlsrv_query( $conn, $sql, $params);
