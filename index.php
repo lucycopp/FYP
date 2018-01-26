@@ -9,21 +9,16 @@ $connectionOptions = array(
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 if ($conn) {
-   if($_GET["username"]){
-       echo "Hello ". $_GET['username']. "<br />";
+   if($_GET["Email"]){
+       echo "Hello ". $_GET['Email']. "<br />";
    };
 
 }
 
+function addToUserTable($Email, $guide, $conn){
 
-
-
-
-
-function addToUserTable($username, $guide, $conn){
-
-    $sql =  "INSERT INTO UserTable(Username, Guide) VALUES (?, ?)";
-    $params = array($username, $guide);
+    $sql =  "INSERT INTO UserTable(Email, Guide) VALUES (?, ?)";
+    $params = array($Email, $guide);
 
     $stmt = sqlsrv_query( $conn, $sql, $params);
     if( $stmt === false ) {
@@ -31,10 +26,10 @@ function addToUserTable($username, $guide, $conn){
     }else {echo "Added"; }
 }
 
-function searchForRecordInUserTableUsernameReturnJSON ($username, $connection)
+function searchForRecordInUserTableUsernameReturnJSON ($Email, $connection)
 {
-    $sql = "SELECT * FROM UserTable WHERE Username=(?) FOR JSON AUTO";
-    $parameters =  array($username);
+    $sql = "SELECT * FROM UserTable WHERE Email=(?) FOR JSON AUTO";
+    $parameters =  array($Email);
     $stmt = sqlsrv_query($connection, $sql, $parameters);
     if ($stmt) {
         while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC)) {

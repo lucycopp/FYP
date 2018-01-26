@@ -6,12 +6,12 @@
  * Time: 23:38
  */
 require 'index.php';
-$username = $_GET['name'];
-//$username = 'Heather';
+$email = $_GET['email'];
 
 
-$sql = "SELECT * FROM UserTable WHERE Username=(?) FOR JSON AUTO";
-$parameters =  array($username);
+
+$sql = "SELECT * FROM UserTable WHERE Email=(?) FOR JSON AUTO";
+$parameters =  array($email);
 $stmt = sqlsrv_query($conn, $sql, $parameters);
 if ($stmt) {
     while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC)) {
@@ -23,3 +23,4 @@ else {die(print_r(sqlsrv_errors(), true)); }
 
 
 ?>
+
