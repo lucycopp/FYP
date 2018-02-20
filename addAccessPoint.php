@@ -15,7 +15,7 @@ $RSSI = $_GET['rssi'];
 
 
 
-$sql =  "INSERT INTO AccessPointsTavle(\"Location ID\", RSSI, MAC) VALUES (?, ?, ?)";
+$sql =  "INSERT INTO AccessPointsTable(\"Location ID\", RSSI, MAC) VALUES (?, ?, ?)";
 $params = array($roomID, $RSSI, $MAC);
 
 $stmt = sqlsrv_query( $conn, $sql, $params);
