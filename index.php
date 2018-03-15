@@ -9,10 +9,19 @@ $connectionOptions = array(
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 if ($conn) {
-   if($_GET["Email"]){
-       echo "Hello ". $_GET['email']. "<br />";
+   if($_GET["Name"] && $_GET["Time"]){
+       addRoomToTable($_GET["Name"], $_GET["Time"], $conn);
    };
+}
 
+function addRoomToTable($Name, $Time, $conn){
+    $sql = "INSERT INTO RoomTable(Name, Time) VALUES (?, ?)";
+    $params = array($Name, $Time);
+
+    $stmt = sqlsrv_query($conn, $sql, $params);
+    if( $stmt === false ) {
+        die( print_r( sqlsrv_errors(), true));
+    }else {echo "Room Added"; }
 }
 
 function addToUserTable($Email, $guide, $conn){
@@ -39,4 +48,6 @@ function searchForRecordInUserTableUsernameReturnJSON ($Email, $connection)
 }
     else {die(print_r(sqlsrv_errors(), true)); }
 }
+
+
 ?>
