@@ -9,10 +9,8 @@ $connectionOptions = array(
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 if ($conn) {
-   if($_GET["Name"] && $_GET["Time"]){
-       echo "Got name and time";
+       echo "CONNECTED";
        addRoomToTable($_GET["Name"], $_GET["Time"], $conn);
-   };
 }
 
 function addRoomToTable($Name, $Time, $conn){
