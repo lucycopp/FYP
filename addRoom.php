@@ -6,7 +6,6 @@
  * Time: 18:33
  */
 
-
 require 'index.php';
 
 
