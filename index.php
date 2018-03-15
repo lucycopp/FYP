@@ -8,20 +8,7 @@ $connectionOptions = array(
     "PWD" => "Bubble2017"
 );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
-if ($conn) {
-       echo "CONNECTED";
-}
 
-function addRoomToTable($Name, $Time, $conn){
-    $sql = "INSERT INTO RoomTable(Name, Time) VALUES (?, ?)";
-    $params = array($Name, $Time);
-
-    $stmt = sqlsrv_query($conn, $sql, $params);
-    if( $stmt === false ) {
-        die( print_r( sqlsrv_errors(), true));
-        echo "Not added";
-    }else {echo "Room Added"; }
-}
 
 function addToUserTable($Email, $guide, $conn){
 
