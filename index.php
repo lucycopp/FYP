@@ -21,6 +21,7 @@ function addRoomToTable($Name, $Time, $conn){
     $stmt = sqlsrv_query($conn, $sql, $params);
     if( $stmt === false ) {
         die( print_r( sqlsrv_errors(), true));
+        echo "Not added";
     }else {echo "Room Added"; }
 }
 
