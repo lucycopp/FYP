@@ -8,18 +8,7 @@
 
 require 'index.php';
 
-
-$roomName = $_GET['Name'];
-$time = $_GET['Time'];
-
-
-$sql =  "INSERT INTO RoomTable(Name, Time) VALUES (?, ?)";
-$params = array($roomName, $time);
-
-$stmt = sqlsrv_query( $conn, $sql, $params);
-if( $stmt === false ) {
-    die( print_r( sqlsrv_errors(), true));
-}else {echo "Added"; }
+echo "GOT ROOM";
 
 
 ?>
