@@ -14,7 +14,7 @@ $ID = $_GET['ID'];
 
 
 
-$sql =  "DELETE FROM KeywordsTable WHERE ID =(?) VALUES (?)";
+$sql =  "DELETE FROM KeywordsTable WHERE ID =(?)";
 $params = array($ID);
 
 $stmt = sqlsrv_query( $conn, $sql, $params);
