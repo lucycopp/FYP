@@ -11,7 +11,7 @@ $id = $_GET['ID'];
 
 
 
-$sql = "SELECT * FROM Keywords WHERE \"Location ID\"=(?) FOR JSON AUTO";
+$sql = "SELECT * FROM KeywordsTable WHERE \"Location ID\"=(?) FOR JSON AUTO";
 $parameters =  array($id);
 $stmt = sqlsrv_query($conn, $sql, $parameters);
 if ($stmt) {
