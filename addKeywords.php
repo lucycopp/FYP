@@ -14,8 +14,8 @@ $keyword = $_GET['Keyword'];
 
 
 
-$sql =  "INSERT INTO KeywordsTable(\"Location ID\", Keyword) VALUES (?, ?)";
-$params = array($roomID, $keyword);
+$sql =  "INSERT INTO KeywordsTable(Keyword, \"Location ID\") VALUES (?, ?)";
+$params = array($keyword, $roomID);
 
 $stmt = sqlsrv_query( $conn, $sql, $params);
 if( $stmt === false ) {
