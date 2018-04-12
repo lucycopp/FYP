@@ -14,6 +14,7 @@ $params = array($roomID, $userID);
 
 $stmt = sqlsrv_query( $conn, $sql, $params);
 if( $stmt === false ) {
+    echo (sqlsrv_query( $conn, $sql, $params));
     die( print_r( sqlsrv_errors(), true));
 }else {echo "Updated"; }
 
