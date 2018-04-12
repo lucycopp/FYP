@@ -12,7 +12,7 @@ $userID = $_GET['userID'];
 $roomID = $_GET['roomID'];
 
 $sql = "UPDATE UserTable SET \"Location ID\" = (?) WHERE \"User ID\" = (?)";
-$params = array($userID);
+$params = array($roomID, $userID);
 
 $stmt = sqlsrv_query( $conn, $sql, $params);
 if( $stmt === false ) {
