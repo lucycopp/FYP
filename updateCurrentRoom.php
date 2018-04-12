@@ -6,10 +6,12 @@
  * Time: 13:16
  */
 
+require 'index.php';
+
 $userID = $_GET['userID'];
 $roomID = $_GET['roomID'];
 
-$sql = "SELECT $roomID AS \"Location ID\" FROM UserTable WHERE \"User ID\" = (?)";
+$sql = "UPDATE UserTable SET \"Location ID\" = (?) WHERE \"User ID\" = (?)";
 $params = array($userID);
 
 $stmt = sqlsrv_query( $conn, $sql, $params);
